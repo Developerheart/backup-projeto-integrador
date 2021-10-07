@@ -1,6 +1,6 @@
 <div class="left_col scroll-view">
   <div class="navbar nav_title" style="border: 0;">
-    <a href="index.html" class="site_title"><i class="fa fa-leaf"></i> <span>EcoLogistic</span></a>
+    <a href="{% url 'index' %}" class="site_title"><i class="fa fa-leaf"></i> <span>EcoLogistic</span></a>
   </div>
 
   <div class="clearfix"></div>
@@ -8,11 +8,11 @@
   <!-- menu profile quick info -->
   <div class="profile clearfix">
     <div class="profile_pic">
-      <img src="/static/images/img.jpg" alt="..." class="img-circle profile_img">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwsUeMCO-OWwtei37A6FYy6QFCb1m_2XD5EiACkcJaBjk7_Du5owYUs7nwDI2KOpGAEw4&usqp=CAU" alt="..." class="img-circle profile_img">
     </div>
     <div class="profile_info">
       <span>Bem-vindo(a),</span>
-      <h2>User</h2>
+      <h2>USER</h2>
     </div>
   </div>
   <!-- /menu profile quick info -->
@@ -24,21 +24,57 @@
     <div class="menu_section">
       <h3>Geral</h3>
       <ul class="nav side-menu">
-        <li><a href="publicacao-trabalho.html">Publicações <span class="fa fa-archive"></span></a></li>
-        <li><a href="anuncio-reciclavel.html">Meus Anúncios <span class="fa fa-bookmark"></span></a></li>
-        <li><a href="inserir-anuncio.html">Inserir Anúncio <span class="fa fa-pencil"></span></a></li>
-        <li><a href="perfil-usuario.html">Perfil <span class="fa fa-user"></span></a></li>
+        <li>
+          <a href="{% url 'index' %}">
+            <i class="fa fa-home"></i>Início
+          </a>
+        </li>
+        <li>
+          <a href="publicacao-trabalho.html">
+            <i class="fa fa-archive"></i>Publicações
+          </a>
+        </li>
+        <li>
+          <a href="anuncio-reciclavel.html">
+            <i class="fa fa-bookmark"></i>Meus Anúncios
+          </a>
+        </li>
+        <li>
+          <a href="inserir-anuncio.html">
+            <i class="fa fa-pencil"></i>Inserir Anúncio
+          </a>
+        </li>
+        <li>
+          <a href="perfil-usuario.html">
+            <i class="fa fa-user"></i>Perfil
+          </a>
+        </li>       
       </ul>
     </div>
     <div class="menu_section">
       <h3>EcoLogistic</h3>
       <ul class="nav side-menu">
-        <li><a href="central-ajuda.html">Central de Ajuda <span class="fa fa-bullhorn"></span></a></li>
-        <li><a href="sobre-nos.html">Sobre Nós <span class="fa fa-users"></span></a></li>
-        <li><a href="termos-de-uso.html">Termos de Uso <span class="fa fa-book"></span></a></li>
-        <li><a href="entre-em-contato.html">Entre em Contato <span class="fa fa-envelope"></span></a></li>
+        <li>
+          <a href="central-ajuda.html">
+            <i class="fa fa-bullhorn"></i>Central de Ajuda
+          </a>
+        </li>
+        <li>
+          <a href="sobre-nos.html"><i class="fa fa-users"></i>Sobre Nós
+          </a>
+        </li>
+        <li>
+          <a href="termos-de-uso.html">
+            <i class="fa fa-book"></i>Termos de Uso
+          </a>
+        </li>
+        <li>
+          <a href="entre-em-contato.html">
+            <i class="fa fa-envelope"></i>Entre em Contato
+          </a>
+        </li>
       </ul>
     </div>
   </div>
   <!-- /sidebar menu -->
-
+</div>
