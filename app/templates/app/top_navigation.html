@@ -1,9 +1,5 @@
 <div class="nav_menu">
   <nav>
-    <div class="nav toggle">
-      <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-    </div>
-
     <ul class="nav navbar-nav navbar-right">
       <li class="">
         <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -32,6 +28,27 @@
             </a>
           </li>
         </ul>
+      </li>
+
+      <li>
+        <a href="{% url 'index' %}">
+          <i class="fa fa-home"></i>Início
+        </a>
+      </li>
+      <li>
+        <a href="publicacao-trabalho.html">
+          <i class="fa fa-archive"></i>Publicações
+        </a>
+      </li>
+      <li>
+        <a href="anuncio-reciclavel.html">
+          <i class="fa fa-bookmark"></i>Meus Anúncios
+        </a>
+      </li>
+      <li>
+        <a href="inserir-anuncio.html">
+          <i class="fa fa-pencil"></i>Inserir Anúncio
+        </a>
       </li>
     </ul>
   </nav>
