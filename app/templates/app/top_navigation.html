@@ -1,55 +1,35 @@
-<div class="nav_menu">
-  <nav>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="">
-        <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwsUeMCO-OWwtei37A6FYy6QFCb1m_2XD5EiACkcJaBjk7_Du5owYUs7nwDI2KOpGAEw4&usqp=CAU" alt="">Usuário
-          <span class=" fa fa-angle-down"></span>
-        </a>
-        <ul class="dropdown-menu dropdown-usermenu pull-right">
-          <li>
-            <a href="perfil-usuario.html">Perfil
-              <span class="fa fa-user pull-right"></span>
-            </a>
-          </li>
-          <li>
-            <a href="configuracoes.html">Configurações
-              <span class="fa fa-gear pull-right"></span>
-            </a>
-          </li>
-          <li>
-            <a href="central-ajuda.html">Ajuda
-              <span class="fa fa-bullhorn pull-right"></span>
-            </a>
-          </li>
-          <li>
-            <a href="login.html">Sair
-              <span class="fa fa-sign-out pull-right"></span>
-            </a>
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="{% url 'index' %}">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">
           <i class="fa fa-home"></i>Início
         </a>
       </li>
-      <li>
-        <a href="publicacao-trabalho.html">
+      <li class="nav-item">
+        <a class="nav-link" href="publicacao-trabalho.html">
           <i class="fa fa-archive"></i>Publicações
         </a>
       </li>
-      <li>
-        <a href="anuncio-reciclavel.html">
+      <li class="nav-item">
+        <a class="nav-link" href="anuncio-reciclavel.html">
           <i class="fa fa-bookmark"></i>Meus Anúncios
         </a>
       </li>
-      <li>
-        <a href="inserir-anuncio.html">
+      <li class="nav-item">
+        <a class="nav-link" href="inserir-anuncio.html">
           <i class="fa fa-pencil"></i>Inserir Anúncio
         </a>
       </li>
+      <li>
+        <a class="nav-link" href="perfil-usuario.html">
+          <i class="fa fa-user"></i>Perfil
+        </a>
+      </li>
     </ul>
-  </nav>
-</div>
+  </div>
+</nav>
