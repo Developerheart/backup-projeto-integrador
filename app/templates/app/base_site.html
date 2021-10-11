@@ -26,9 +26,9 @@
       <div class="container">
         
           {% block top_navigation %}
-            <div class="top_nav">
-              {% include "app/top_navigation.html" %}
-            </div>
+            
+            {% include "app/top_navigation.html" %}
+            
           {% endblock top_navigation %}
 
           {% block content %}
@@ -36,9 +36,9 @@
           {% endblock content %}
 
           {% block footer %}
-            <footer class="navbar-fixed-bottom">
-              {% include "app/footer.html" %}
-            </footer>
+            
+            {% include "app/footer.html" %}
+            
           {% endblock footer %}
         
       </div>

@@ -9,36 +9,40 @@
 
 {% block content %}
   <div class="right_col" role="main">
-    {% include 'app/slideshow.html' %}
+    
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <img class="d-block w-100" src="{% static 'app/img/Eco Logistic.png' %}">
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <h1></h1>
+      </div>
+      <div class="card-deck">
+        <div class="card border-success mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+        <div class="card border-success mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+        <div class="card border-success mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <br />
+    <br>
 
     
   </div>
 {% endblock content %}
-
-{% block javascripts %}
-  {{ block.super}}
-  <!-- Chart.js 
-  <script src="/static/app/vendors/Chart.js/dist/Chart.min.js"></script>
-  gauge.js
-  <script src="/static/app/vendors/gauge.js/dist/gauge.min.js"></script>
-  Skycons
-  <script src="/static/app/vendors/skycons/skycons.js"></script>
-   Flot
-  <script src="/static/app/vendors/Flot/jquery.flot.js"></script>
-  <script src="/static/app/vendors/Flot/jquery.flot.pie.js"></script>
-  <script src="/static/app/vendors/Flot/jquery.flot.time.js"></script>
-  <script src="/static/app/vendors/Flot/jquery.flot.stack.js"></script>
-  <script src="/static/app/vendors/Flot/jquery.flot.resize.js"></script>
-  Flot plugins 
-  <script src="/static/app/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-  <script src="/static/app/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-  <script src="/static/app/vendors/flot.curvedlines/curvedLines.js"></script>
-   DateJS
-  <script src="/static/app/vendors/DateJS/build/date.js"></script>
-  JQVMap 
-  <script src="/static/app/vendors/jqvmap/dist/jquery.vmap.js"></script>
-  <script src="/static/app/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-  <script src="/static/app/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>-->
-{% endblock javascripts %}
