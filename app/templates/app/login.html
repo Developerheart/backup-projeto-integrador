@@ -1,0 +1,48 @@
+{% extends "app/base_site.html" %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %} Login {% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link href="{% static 'app/css/ecologistic.css' %}" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block body %}
+<div class="form-wrap">
+    <div class="tabs">
+      <h3 class="signup-tab"><a href="{% url 'registro' %}">Cadastro</a></h3>
+      <h3 class="login-tab"><a class="active" href="{% url 'login' %}">Entrar</a></h3>
+    </div><!--.tabs-->
+
+    <div class="tabs-content">
+      <div id="login-tab-content" class="active">
+        <form class="login-form" action="{% url 'login' %}" method="post">
+        	{% csrf_token %}
+			<div class="form-group">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					{% render_field form_login.username class="form-control" placeholder="Usuário" %}
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					{% render_field form_login.password class="form-control" placeholder="Senha" %}
+				</div>
+			</div>
+          	<input type="checkbox" class="checkbox" id="remember_me">
+          	<label for="remember_me">Lembrar-me</label>
+          	<input type="submit" class="button" value="Entrar">
+        </form><!--.login-form-->
+        <div class="help-text">
+          <p><a href="#">Esqueceu a senha?</a></p>
+        </div><!--.help-text-->
+      </div><!--.login-tab-content-->
+    </div><!--.tabs-content-->
+  </div><!--.form-wrap-->
+
+  {% block javascripts %}
+    <script src="{% static 'app/js/ecologistic.js' %}"></script>
+  {% endblock %}
+{% endblock body %}

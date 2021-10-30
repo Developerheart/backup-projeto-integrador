@@ -1,7 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template import loader
 from django.http import HttpResponse
 from django.views.generic import TemplateView
+from .forms import UsuarioForm
+from django.contrib.auth import login, authenticate
+from django.contrib import messages
+from django.contrib.auth.forms import AuthenticationForm
 
 class IndexView(TemplateView):
     template_name = "app/index.html"
@@ -67,4 +71,39 @@ class InserirAnuncioView(TemplateView):
         return context
     
 
+def registro_usuario(request):
+	if request.method == "POST":
+		form_registro = UsuarioForm(request.POST)
+		if form_registro.is_valid():
+			usuario = form_registro.save()
+			login(request, usuario)
+			messages.success(request, "Cadastro realizado com sucesso." )
+			#return redirect("main:homepage")
+		messages.error(request, "Cadastro não realizado. Informações incorretas.")
+	form_registro = UsuarioForm()
+	return render (request=request, template_name="app/registro.html", context={"form_registro":form_registro})
 
+
+def login_usuario(request):
+	if request.method == "POST":
+		form_login = AuthenticationForm(request, data=request.POST)
+		if form_login.is_valid():
+			username = form.cleaned_data.get('username')
+			password = form.cleaned_data.get('password')
+			user = authenticate(username=username, password=password)
+			if user is not None:
+				login(request, user)
+				messages.info(request, f"Você está logado como {username}.")
+				#return redirect("main:homepage")
+			else:
+				messages.error(request,"Senha ou Usuário incorretos.")
+		else:
+			messages.error(request,"Senha ou Usuário incorretos.")
+	form_login = AuthenticationForm()
+	return render(request=request, template_name="app/login.html", context={"form_login":form_login})
+
+
+def logout_usuario(request):
+	logout(request)
+	messages.info(request, "You have successfully logged out.") 
+	#return redirect("main:homepage")

@@ -1,0 +1,57 @@
+{% extends "app/base_site.html" %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %} Cadastre-se {% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link href="{% static 'app/css/ecologistic.css' %}" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block body %}
+<div class="form-wrap">
+    <div class="tabs">
+      <h3 class="signup-tab"><a class="active" href="{% url 'registro' %}">Cadastro</a></h3>
+      <h3 class="login-tab"><a href="{% url 'login' %}">Entrar</a></h3>
+    </div><!--.tabs-->
+
+    <div class="tabs-content">
+      <div id="signup-tab-content" class="active">
+        <form class="signup-form" action="{% url 'registro' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					{% render_field form_registro.email class="form-control" placeholder="E-mail" %}
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					{% render_field form_registro.username class="form-control" placeholder="Usuário" %}
+				</div>
+			</div>
+            <div class="form-group">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					{% render_field form_registro.password1 class="form-control" placeholder="Senha" %}
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					{% render_field form_registro.password2 class="form-control" placeholder="Confirme a senha" %}
+				</div>
+			</div>
+          <input type="submit" class="button" value="Cadastrar">
+        </form><!--.login-form-->
+        <div class="help-text">
+          <p>Ao realizar o cadastro, você aceita nossos</p>
+          <p><a href="#">Termos de Uso</a></p>
+        </div><!--.help-text-->
+      </div><!--.signup-tab-content-->
+    </div><!--.tabs-content-->
+  </div><!--.form-wrap-->
+
+  {% block javascripts %}
+        <script src="{% static 'app/js/ecologistic.js' %}"></script>
+      {% endblock %}
+{% endblock body %}
