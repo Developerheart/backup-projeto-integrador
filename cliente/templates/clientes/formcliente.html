@@ -1,0 +1,41 @@
+{% extends "app/base_site.html" %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} Cadastro Cliente {% endblock title %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<div class="container p-3 my-3 border">
+    <h1 >{% autoescape off %} {{ icone_titulo }} {{ titulo }}{% endautoescape %}</h1>
+    <p class="lead">Preencha todos os campos obrigatórios</p>
+    <hr>
+
+    <form action="" method="POST" autocomplete="off" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form|crispy }}
+
+        <br>
+        <br>
+
+        <button type="submit" class="btn btn-primary mt-3">{% autoescape off %}{{icon}} {{cadastrar}} {% endautoescape%}</button>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block rodape %}
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/jquery.mask.min.js' %}"></script>
+
+<script src="{% static 'js/mask.js' %}"></script>
+
+{% endblock %}
